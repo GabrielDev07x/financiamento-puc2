@@ -2,7 +2,7 @@ import unittest
 
 from financiamento.calculadoraSimples import somar, subtrair  # Ajuste a importação
 
-#alterações
+#TESTE FINALLLL
 class TestCalculadora(unittest.TestCase):
     def test_somar(self):
         self.assertEqual(somar(1, 2), 3)
