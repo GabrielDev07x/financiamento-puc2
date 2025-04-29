@@ -24,8 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Caso tenha um requirements.txt
-          
+
       - name: Run tests
         run: |
           python -m unittest discover tests  # Descobre e roda todos os testes dentro da pasta tests
