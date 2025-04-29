@@ -9,8 +9,8 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Enviar notificação para o Discord
-        run: |
-          curl -X POST -H "Content-Type: application/json" \
-          -d '{"content": "Novo push no repositório! Verifique as mudanças no GitHub."}' \
-          https://discord.com/api/webhooks/SEU_WEBHOOK_ID/SEU_WEBHOOK_TOKEN
+    - name: Enviar notificação para o Discord
+      run: |
+    curl -X POST -H "Content-Type: application/json" \
+    -d '{"content": "Novo push no repositório! Verifique as mudanças no GitHub."}' \
+    https://discord.com/api/webhooks/1366508867349123082/u9RiR0-Dfyx4t1bHtDP3CLr4it9Q5YJip4zlGDqoJYaGAgZt9PvTehB4r8ooXmjb-3cY
