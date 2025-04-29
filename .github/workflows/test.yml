@@ -27,4 +27,4 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m unittest discover tests  # Descobre e roda todos os testes dentro da pasta tests
+            PYTHONPATH=. python -m unittest discover tests
