@@ -1,4 +1,4 @@
-name: Notificação no Discord
+name: Discord Alert
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - main
 
 jobs:
-  notify:
+  discord:
     runs-on: ubuntu-latest
     steps:
-    - name: Enviar notificação para o Discord
-      run: |
-    curl -X POST -H "Content-Type: application/json" \
-    -d '{"content": "Novo push no repositório! Verifique as mudanças no GitHub."}' \
-    https://discord.com/api/webhooks/1366508867349123082/u9RiR0-Dfyx4t1bHtDP3CLr4it9Q5YJip4zlGDqoJYaGAgZt9PvTehB4r8ooXmjb-3cY
+      - name: Send Discord Notification
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"content": "🚀 Novo push no repositório! [Acesse o Discord](https://discord.gg/1366508867349123082)"}' \
+          https://discord.com/api/webhooks/1366508867349123082/u9RiR0-Dfyx4t1bHtDP3CLr4it9Q5YJip4zlGDqoJYaGAgZt9PvTehB4r8ooXmjb-3cY
