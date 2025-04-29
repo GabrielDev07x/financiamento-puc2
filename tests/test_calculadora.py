@@ -2,7 +2,7 @@ import unittest
 
 from financiamento.calculadoraSimples import somar, subtrair  # Ajuste a importação
 
-# Testando PR com Github Actions
+#Testando PR com Github Actions
 
 class TestCalculadora(unittest.TestCase):
     def test_somar(self):
