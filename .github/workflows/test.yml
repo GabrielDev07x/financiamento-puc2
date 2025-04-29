@@ -1,0 +1,31 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main  # ou a branch que você está usando
+  pull_request:
+    branches:
+      - main  # ou a branch que você está usando
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # Você pode usar outras imagens se precisar, mas essa é a padrão para Python
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Faz o checkout do código
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'  # Especifique a versão do Python que você está usando
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Caso tenha um requirements.txt
+          
+      - name: Run tests
+        run: |
+          python -m unittest discover tests  # Descobre e roda todos os testes dentro da pasta tests
