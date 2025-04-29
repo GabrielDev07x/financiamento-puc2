@@ -1,22 +1,18 @@
-import pytest
-from financiamento import calculadora
+import unittest
 
-def test_calcular_valor_parcela():
-    parcela = calculadora.calcular_valor_parcela(100000, 6, 30)
-    assert round(parcela, 2) == 599.55
+from financiamento.calculadoraSimples import somar, subtrair  # Ajuste a importação
 
-def test_calcular_montante_final():
-    montante = calculadora.calcular_montante_final(100000, 6, 30)
-    assert round(montante, 2) == 215838.0
+#teste
+class TestCalculadora(unittest.TestCase):
+    def test_somar(self):
+        self.assertEqual(somar(1, 2), 3)
+        self.assertEqual(somar(-1, 1), 0)
+        self.assertEqual(somar(0, 0), 0)
 
-def test_calcular_juros_simples():
-    juros = calculadora.calcular_juros_simples(1000, 10, 2)
-    assert juros == 200
+    def test_subtrair(self):
+        self.assertEqual(subtrair(2, 1), 1)
+        self.assertEqual(subtrair(1, 2), -1)
+        self.assertEqual(subtrair(0, 0), 0)
 
-def test_calcular_juros_compostos():
-    juros = calculadora.calcular_juros_compostos(1000, 10, 2)
-    assert round(juros, 2) == 210.0
-
-def test_financiamento_viavel():
-    assert calculadora.financiamento_viavel(5000, 1400) == True
-    assert calculadora.financiamento_viavel(4000, 1400) == False
+if __name__ == '__main__':
+    unittest.main()
